@@ -193,7 +193,7 @@ public class MainActivity extends Activity {
 		left_Menu = (SlidingMenu) findViewById(R.id.id_menu);
 		background_img = (ImageView) findViewById(R.id.background_img);
 		left_Menu.setBackground(background_img);
-		TextView voice = (TextView) findViewById(R.id.yuyinshibie_btn);
+		Button voice = (Button) findViewById(R.id.yuyinshibie_btn);
 		LeftMenuListener lml = new LeftMenuListener();
 		voice.setOnClickListener(lml);
 
@@ -487,7 +487,7 @@ public class MainActivity extends Activity {
 					public void onResults(Bundle results) {
 						ArrayList<String> rs = results != null ? results
 								.getStringArrayList(RESULTS_RECOGNITION) : null;
-						if (rs != null) {
+						if (rs != null && rs.size()!=0) {
 							searchText.setText(rs.get(0).subSequence(0,
 									rs.get(0).length() - 1));
 						}
