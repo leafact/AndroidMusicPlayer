@@ -684,6 +684,12 @@ public class MainActivity extends Activity {
 				}
 				if (addFlag) {
 					musicQueueListData.add(add);
+					List<Music> temp=new ArrayList<Music>();
+					temp.addAll(musicQueueListData);
+					System.out.println(temp.size());
+					musicQueueListData.clear();
+					musicQueueListData.addAll(temp);
+					System.out.println(musicQueueListData.size());
 					musicQueueListViewAdapter.notifyDataSetChanged();
 				} else {
 					ToastInfo("已经在队列中");
